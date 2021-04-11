@@ -1,0 +1,7 @@
+
+DB_HOST = "172.17.0.2"
+DB_PORT = "3306"
+DB_USER = "root"
+DB_NAME = "Test"
+DB_PASSWORD = "123"
+DB_SSL_DISABLE = False
