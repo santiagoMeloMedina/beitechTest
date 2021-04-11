@@ -1,10 +1,9 @@
 
 from configuration.db import db_client
 
-def createOrder(customer_id, products, address):
-    total_price = sum([product.getPrice() for product in products])
+def createOrder(customer_id, products, address, total):
     query = f"""INSERT INTO `order` (customer_id, creation_date, delivery_address, total) 
-                values ({customer_id}, NOW(), '{address}', {total_price})"""
+                values ({customer_id}, NOW(), '{address}', {total})"""
     result = db_client.crud(query)
     return result
 

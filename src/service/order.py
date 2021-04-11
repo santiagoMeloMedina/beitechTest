@@ -24,7 +24,8 @@ def createOrder():
     total_units = sum([product["units"] if product["id"] in considered_units else 0 for product in body["products"]])
 
     if total_units <= VALUES.MAX_ORDER_UNITS and total_units > 0:
-        create = OrderRepo.createOrder(body["customer_id"], products, body["delivery_address"])
+        total_price = sum([product.getPrice()*units_map[product.getId()] for product in products])
+        create = OrderRepo.createOrder(body["customer_id"], products, body["delivery_address"], total_price)
         rows, order_id = create["rows"], create["lastid"]
         if rows > 0:
             order = Order(**OrderRepo.getOrder(order_id))
