@@ -1,5 +1,5 @@
 
-### Beitech Practice Test
+## Beitech Practice Test
 Here's the solution API for the `customer_product_order` database. This service was created with **Python3.8**, **Flask** framework and **mysql-connector-python** mysql client library.
 
 #### Installing dependencies
