@@ -14,3 +14,12 @@ def createOrder():
     except Exception as e:
         result["response"] = str(e)
     return jsonify(result)
+
+@route.route(f"/{ROUTES.ORDER}/list", methods=['GET'])
+def listOrders():
+    result = VALUES.RESPONSE.copy()
+    try:
+        result["response"] = OrderService.listOrders()
+    except Exception as e:
+        result["response"] = str(e)
+    return jsonify(result)

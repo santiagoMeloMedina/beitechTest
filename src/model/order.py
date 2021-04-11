@@ -17,7 +17,7 @@ class Order:
     def getCreationDate(self):
         return self.creation_date
     
-    def getDeliveryDate(self):
+    def getDeliveryAddress(self):
         return self.delivery_address
     
     def getTotal(self):
