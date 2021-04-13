@@ -15,7 +15,7 @@ Then to install
 
 #### Running the application
 To run the application you must go on the `src` folder and run the file `main.py`. To use a custom database configuration you can set the environmental variables:
->   PORT &rarr; _app port_
+>   PORT &rarr; _app port_  
     DB_HOST &rarr; _database host ip_  
     DB_PORT &rarr; _database host port_  
     DB_USER &rarr; _database user_  
