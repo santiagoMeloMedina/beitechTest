@@ -1,0 +1,112 @@
+
+{
+    "openapi": "3.0.1",
+    "info": {
+        "description": "This is the API documentation",
+        "title": "Beitech Practice Test",
+        "contact": {
+            "email": "smelomedina05@gmail.com"
+        }
+    },
+    "tags": [
+        {
+            "name": "Orders",
+            "description": "Here create and list order endpoints can be found"
+        }
+    ],
+    "paths": {
+        "/order/create": {
+            "post": {
+                "tags": [
+                    "Orders"
+                ],
+                "summary": "Creates an order and the respective order details",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "customer_id",
+                        "required": true,
+                        "description": "Customer ID to create an order for",
+                        "type": "integer",
+                        "example": 1
+                    },
+                    {
+                        "in": "body",
+                        "name": "delivery_address",
+                        "required": true,
+                        "description": "Address for the product to be delivered to",
+                        "type": "string",
+                        "example": "Street 100"
+                    },
+                    {
+                        "in": "body",
+                        "name": "products",
+                        "required": true,
+                        "description": "Customer ID to create an order for",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/product"
+                            }
+                        },
+                        "example": [
+                            {
+                                "id": 1,
+                                "units": 3
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "/order/list": {
+            "get": {
+                "tags": [
+                    "Orders"
+                ],
+                "summary": "List all orders for a customer with the detail created in a date range",
+                "parameters": [
+                    {
+                        "in": "url parameter",
+                        "name": "customer_id",
+                        "required": true,
+                        "description": "Customer ID to retrieve orders for",
+                        "type": "integer",
+                        "example": 1
+                    },
+                    {
+                        "in": "url parameter",
+                        "name": "from",
+                        "required": true,
+                        "description": "Start date",
+                        "type": "string",
+                        "example": "10/04/2021"
+                    },
+                    {
+                        "in": "url parameter",
+                        "name": "to",
+                        "required": true,
+                        "description": "End date",
+                        "type": "string",
+                        "example": "13/04/2021"
+                    }
+                ]
+            }
+        }
+    },
+    "definitions": {
+        "product": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "Product ID"
+                },
+                "units": {
+                    "type": "integer",
+                    "description": "Units of product to order"
+                }
+            }
+        }
+    }
+}
