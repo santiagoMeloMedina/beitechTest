@@ -79,6 +79,7 @@ python-versions = "*"
 flask = "*"
 
 [[package]]
+<<<<<<< HEAD
 name = "iniconfig"
 version = "1.1.1"
 description = "iniconfig: brain-dead simple config-ini parsing"
@@ -87,6 +88,8 @@ optional = false
 python-versions = "*"
 
 [[package]]
+=======
+>>>>>>> 6d750552ad9e350a6ad61a58b8089b5bc71cb6de
 name = "itsdangerous"
 version = "1.1.0"
 description = "Various helpers to pass data to untrusted environments and back."
@@ -233,7 +236,11 @@ watchdog = ["watchdog"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
+<<<<<<< HEAD
 content-hash = "a30c7756371c51de2454a846a427a4d6739814634c3792b83272337f09cfa95e"
+=======
+content-hash = "295468ee23edf153a503acc0b924a54f2714e47426175e9f8652c0c3876c97d9"
+>>>>>>> 6d750552ad9e350a6ad61a58b8089b5bc71cb6de
 
 [metadata.files]
 atomicwrites = [

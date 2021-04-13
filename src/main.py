@@ -13,4 +13,4 @@ def send_file(filename):
     return send_from_directory(app.static_folder, filename)
 
 if __name__ == "__main__":
-    app.run(debug=False, port=CONN.PORT)
+    app.run(debug=True, port=CONN.PORT)
