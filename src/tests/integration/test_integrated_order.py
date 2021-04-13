@@ -1,8 +1,9 @@
 
 from datetime import datetime
 import json
+from util.test import ANY
 
-# TODO(Santiago): fix for any date
+any_data = ANY()
 
 def test_create_order(client):
     data = {
@@ -23,23 +24,23 @@ def test_create_order(client):
     expected_response = {
         'details': [
             {
-                'order_detail_id': 1, 
-                'order_id': 1, 
+                'order_detail_id': any_data, 
+                'order_id': any_data, 
                 'product_id': 10, 
                 'quantity': 1
             }, 
             {
-                'order_detail_id': 2, 
-                'order_id': 1, 
+                'order_detail_id': any_data, 
+                'order_id': any_data, 
                 'product_id': 15, 
                 'quantity': 2
             }
         ], 
         'order': {
-            'creation_date': datetime.today().date(), 
+            'creation_date': any_data, 
             'customer_id': 1, 
             'delivery_address': 'Calle 40 #20-40', 
-            'order_id': 1, 
+            'order_id': any_data, 
             'total': 162000.0
         }
     }
@@ -73,8 +74,9 @@ def test_list_orders(client):
     response = client.get("/order/list", query_string=data).get_json()
     expected_response = [
         {
-            'creation_date': datetime.today().date(), 
-            'order_id': 1, 'total': 162000.0, 
+            'creation_date': any_data, 
+            'order_id': any_data, 
+            'total': 162000.0, 
             'delivery_address': 'Calle 40 #20-40', 
             'products': [
                 {'name': 'producto j', 'units': 1}, 

@@ -13,6 +13,7 @@ class DBClient:
             ssl_disabled=CONN.DB_SSL_DISABLE
         )
         self.cursor = self.conn.cursor(dictionary=True)
+        self.committing = True
     
     def query(self, query):
         self.cursor.execute(query)
@@ -20,7 +21,7 @@ class DBClient:
     
     def crud(self, query):
         response = self.cursor.execute(query)
-        self.conn.commit()
+        if self.committing: self.conn.commit()
         return { "rows": self.cursor.rowcount, "lastid": self.cursor.lastrowid }
 
 
