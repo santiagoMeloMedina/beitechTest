@@ -2,6 +2,9 @@
 ## Beitech Practice Test
 Here's the solution API for the `customer_product_order` database. This service was created with **Python3.8**, **Flask** framework and **mysql-connector-python** mysql client library.
 
+#### API Documentation
+To see the API documentation, after running the app go into endpoint `/docs`.
+
 #### Installing dependencies
 This project is using poetry to help install it's packages, you may also check them out on file `pyproject.toml` to install them with _pip3_. In order to execute poetry virtual environment you can use:
 ```

@@ -8,6 +8,7 @@ authors = ["Santiago Melo Medina"]
 python = "^3.8"
 Flask = "^1.1.2"
 mysql-connector-python = "^8.0.23"
+flask-swagger-ui = "^3.36.0"
 
 [tool.poetry.dev-dependencies]
 Flask-Cors = "^3.0.10"

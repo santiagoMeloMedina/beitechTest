@@ -1,2 +1,4 @@
 
 ORDER = "order"
+
+SWAGGER = "swagger"
